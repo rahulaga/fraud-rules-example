@@ -1,0 +1,10 @@
+package rules
+
+import com.irahul.boot.*;
+
+rule "Rule Amount Threshold"   
+    when
+    	$req:ScoreFact(txnAmount > 100)
+    then
+    	$req.addScore(50);
+end
